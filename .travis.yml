@@ -11,10 +11,11 @@ before_script:
 - npm install -g @angular/cli
 - npm install
 script:
-- ng build --prod --aot
+- ng build --prod
 - ng test
 before_deploy: "echo 'Deploying to firebase.'"
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: "ps5NfZF/EqvG1W/k3wTOx3NDI89JSyn75wkLaiEEidAzJ3WX1ufAvIZDme6I+SMRVQKw66tMtpZ+mJ5Fx06gxQcBn0zcFE7keJhWUFgSXa/bqSSQEAjZ5wP8Yi8GY7JFFRSDovqX3YmOF/sURee5VEKH+qEwTn/EI27XamWx5O7v+pPQxt39hy0DYtZzmkPclfgX60hR1CAG2rUUgDDMuSG9RMzlylO1v6/UszWCWsHA2VVCO0shisHGb4+imZx/p1Zl+c2WIXJLvLAaCaMLcOZS7otWb/NeZs0nbuHATfRTJG2lZzCdjCWlYh6VnL3m8qFhoebE+JtR6MrqsX6qQn/Ik1A+ZsYMh5Wt059dzaz0VzAbA1wBWyv4yb0vzMON6wGBEjwGvAGgz2ca1zs7oUdm1RdmaR3G/NZn0RGYnaAbtW0ttsJdrlAEhUaWBhOyCTB637kEeOshUeKRNUAxQwwUjm7RP0omYwOb7mC5TKP+LP9dypzL1EnDuq6ookSvxfu5TtiIeVIbEojWWUINgTs8lrUPcDb18yZ6rRl426MnXImoMlopBFtRqIIF5QSBE59lslAd99AdSOdoba4ABtoV7qnQm1ue5u6KlHX+Hqk4GqltnWVtqyU4uGMNEVduKzwYfyTF4G1TICscblBRHoUT2gjM2Me+crCV9bkihm0="
