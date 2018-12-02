@@ -1,19 +1,20 @@
 sudo: required
 addons:
   chrome: stable
-
 language: node_js
 node_js:
-  - "8"
-
+- '8'
 branches:
   only:
-    - master
-
+  - master
 before_script:
-  - npm install -g @angular/cli
-  - npm install
-
+- npm install -g @angular/cli
+- npm install
 script:
-  - ng build --prod --aot
-  - ng test
+- ng build --prod --aot
+- ng test
+before_deploy: "echo 'Deploying to firebase.'"
+deploy:
+  provider: firebase
+  token:
+    secure: "d2AwK5m9Kx1AG9TIgxYjbKSciyx1YFyvikDcNPg0ZHKiGsob2cMLIqHWviBmYdY4qGE0hYUA/r3nfHzbeZU83nTjGocQH8dbiFX4v5SONKKOXFMpT1lF5woRrsK5xsRoBaKs0GKcZq0KFAuMQD+3nmqKAjvrjxn66kax0nMV2g4T9furawMmeDbG+IAKwt9YBkB4DBQ06E8eq22AzIcLQYWrH6521ftJz/1vuIjBW/g1HO/mV1XaEjpyWuOaZJp+espNCZ/NDTo0jwNgQUczO2TTsq4XXHFqFjnGOBe2H3q2G37D//71laiStm5ZwLAvJjRn7Poy07ekMOjFrhQJC6ZZXkvfKuBdbIc5TTzvd9hO3obhR1ZitZ2AWrrWPkXhbWTSOOcVt3Gy4OmeYbCbRrCOyHFeUDuawxHuVLnxAbKHiWfIia8edSIvgOv6CGeYQP61blUthKNJpgNwr7TFnYlVKfuLa4fu7QD8+V1CyyYYi3mNUg8t4w5OiM6M9Rx7+Zf2XJykzM1HpzobpzjgcaAzN7VPWlIe3+5ag2UradMkIHqyLZtgYXw/RQ4myiOJCvmUYJhS2el/U8F+r5jZmoiACW6agt/s4zXsQee2ux0KTJt5mMWv3ie8nSDGeFNmjdaz15E6rZKiXbJNSfhi4w746AzmaHU7VuKCTpxj1XA="
